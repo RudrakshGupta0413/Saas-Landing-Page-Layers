@@ -8,16 +8,15 @@ import Pointer from "@/components/Pointer";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
 import cursorYouImage from "@/assets/images/cursor-you.svg";
-import BlurText from "@/blcoks/TextAnimations/BlurText/BlurText";
 
 export default function Hero() {
     const [leftDesignScope, leftDesignAnimate] = useAnimate();
     const [leftPointerScope, leftPointerAnimate] = useAnimate();
     const [rightDesignScope, rightDesignAnimate] = useAnimate();
     const [rightPointerScope, rightPointerAnimate] = useAnimate();
-    const handleAnimationComplete = () => {
-        console.log("All letters have animated!");
-    };
+    // const handleAnimationComplete = () => {
+    //     console.log("All letters have animated!");
+    // };
 
     useEffect(() => {
         leftDesignAnimate([
@@ -57,7 +56,7 @@ export default function Hero() {
                 { duration: 0.5 },
             ],
         ]);
-    }, []);
+    }, [leftDesignAnimate, leftDesignScope, leftPointerAnimate, leftPointerScope, rightDesignAnimate, rightDesignScope, rightPointerAnimate, rightPointerScope]);
     return (
         <motion.section
             className="py-24 overflow-x-clip"
@@ -132,17 +131,17 @@ export default function Hero() {
                     rootMargin="-50px"
                     onLetterAnimationComplete={handleAnimationComplete}
                 /> */}
-                <BlurText
+                {/* <BlurText
                     text="Next-gen design, crafted for limitless impact"
                     delay={150}
                     animateBy="words"
                     onAnimationComplete={handleAnimationComplete}
                     className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 py-2"
-                />
+                /> */}
 
-                {/* <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6">
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6">
                     Impactful design, created effortlessly
-                </h1> */}
+                </h1>
                 <p className="text-center text-xl text-white/50 mt-8 max-w-2xl mx-auto">
                     Design tools shouldn&apos;t slow you down. Layers combines
                     powerful features with an interface that keeps in your
